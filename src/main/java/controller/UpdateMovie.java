@@ -41,6 +41,7 @@ public class UpdateMovie  extends HttpServlet{
 		Dao dao = new Dao();
 		try {
 			if(imagepart.getSize()>0) {
+			movie.setMovieimage(imagepart.getInputStream().readAllBytes());
 			dao.updateMovie(movie);
 			
 			req.setAttribute("movies", dao.getAllMovies());
@@ -52,7 +53,7 @@ public class UpdateMovie  extends HttpServlet{
 				movie.setMovieimage(dbmovie.getMovieimage());
 				dao.updateMovie(movie);
 				
-				req.setAttribute("movie", dao.getAllMovies());
+				req.setAttribute("movies", dao.getAllMovies());
 				RequestDispatcher dispatcher = req.getRequestDispatcher("home.jsp");
 				dispatcher.include(req, resp);
 			}

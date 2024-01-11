@@ -6,6 +6,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<style>
+body{
+text-align: center;
+}
+</style>
 <body>
 	<a href="alogin.jsp">Login</a>
 	<a href ="asignup.jsp">Signup</a>
